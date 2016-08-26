@@ -1,0 +1,98 @@
+vim normal mode      -  where we can perform several functions and start various modes available
+vim command mode     -  In the command mode, user can move around the file, delete text, etc.
+CLI                  -  Command line interface, where user can issue commands in form of plain text.
+Shell                -  its a CLI to access an OS services.
+Profile              -  It is the file which is loaded when a shell is initialized at start
+File                 -  it is an entity that stores data.
+File descriptor      -  it is abstract unique representations that represent an opened file in OS
+Process              -  It is an instance of computer program and its current activity. can contain multiple threads.
+Environment          -  It is collection of dynamic named values that can affect the way processes behave.
+Environment variable -  dynamic named values that affect the way processes run and behave. they provide essential info to the process, which is required for its functioning.
+Redirection          -  Redirection is the process by which we change where input and output come from and go to.
+Pipe                 -  It is a sequence of processes chained together by their standard streams, output of each process is redirected to another process.
+Text stream          -  series of characters which is interpreted by the CLI and appropriate action is taken.
+Stdin                -  It is the input stream by which a process gets its inputs.
+Stdout               -  It is the output stream by which a process gives its output.
+Stderr               -  It is the error stream by which a process gives and notifies about an error if occured.
+EOF                  -  EOF is a condition in which no more data can be read from a data source.
+Filtering            -  These are processes by which we can filter the input being recieved. using filters such as cut, grep, head, tail, sort etc.
+Job                  -  It is a group of one or more connected processes. ex- cat file.txt | grep some-stuff. Jobs are managed by the operating system as a single process group
+Foreground job       -  An interactive process group which occupies the current shell session and works in the foreground.
+Background job       -  A non-interactive process group that runs behind the normal interactive processes. It doesnt occupies the shell session.
+Exit code            -  It is an integer value returned by a process after it exits. value=0 for no error, value!=0 if an error occurs.
+
+VIM
+
+vim                  -  Opens the inbuilt editor vim.
+h                    -  move left
+j                    -  move down
+k                    -  move up
+l                    -  move right
+i                    -  enter insert mode.
+o                    -  move to next line and enter insert mode.
+<escape>             -  enter command mode.
+x                    -  deletes element at cursor.
+dd                   -  deletes the present line.
+:wq                  -  saves file and quits vim.
+:q!                  -  overrides and quits without saving.
+/                    -  search.
+
+LESS                 
+
+less                 -  starts less to read a file.
+j                    -  move up
+k                    -  move down
+q                    -  quit less
+--ch                 -  chop long lines.
+/                    -  search.
+&                    -  displays lines with the specified words.
+
+Bash and Bash built in commands
+
+echo                 -  displays outputs in stdout.
+history              -  shows the CLI history.
+exit                 -  quits shell.
+pwd                  -  present working directory.
+=                    -  assignment operator.
+$                    -  used to print value of variables. A $ prefixing a variable name indicates the value the variable holds.
+?                    -  test operator.
+set                  -  built in function of shell used todefine and determine environment variables.
+env                  -  used to print a list of the current environment variables, or to run another program in a custom environment without modifying the current oneexport               -  export commands marks an environment variable to be exported to child processes, so that they have it in their environment.
+$LANG                -  $LANG displays value of variable LANG. which is in locale
+read                 -  it reads a line from standard input and assigns it to a variable.
+<CTRL>+z             -  suspends an ongoing process/group of connected-processes in a pipeline.
+<CTRL>+c             -  terminates an ongoing process/group of connected-processes in a pipeline.
+jobs                 -  lists all the jobs alongwith a number unique to it so as to identify it.
+fg                   -  fore-ground, it brings a job to foreground when provided with its identifying unique number.
+
+REDIRECTION
+
+>                    -  output redirection. > file is appended to any command, output of that command will be written to file instead of terminal.
+<                    -  input redirection. input of a command can be redirected using this operator from stdin to a file.
+>>                   -  appends text to target file ex- "cat haha.txt >> manish.txt." haha.txt is appended to manish.txt
+|                    -  pipe, used to connect one process to another so as one's output acts a input to another.
+/dev/stdin           -  used to get input from standard input.
+/dev/stdout          -  used to put otput on standard output
+/dev/stderr          -  used to display error messages on standard error reporting.
+
+THER PROGRAMS
+
+man                  -  opens manual for the given command.
+ls                   -  displays list of files in a directory.
+cat                  -  cat command allows us to create single or multiple files, view contents of file, concatenate files and redirect output in terminal or files.
+dpkg-reconfigure     -  it reconfigures the  already installed packages.
+head                 -  first line of a file.
+tail                 -  last line of the file.
+grep                 -  used to search given term in its input.
+awk                  -  pattern-directed scanning and processing. ex - "ls -al | awk '{printf "%-20s %s\n",$9, $8}'"
+sed                  -  sed is a stream editor used to get input and modify it acoording to specified rules. ex - "cat ls.out | sed  's/bash/I replace this!!!/g'"
+tee                  -  reads standard inputs and writes it to both standard output and one or more files.
+dd                   -  used to convert and copy files. ex - "dd if=/dev/zero of=~/test.img bs=1M count=10"
+pv                   -  used to moniter the progress of data through a file.
+locale               -  displays information about current local settings.
+sudo                 -  allows a permitted user to execute a command as superuser.
+cp                   -  copy files. ex - "cp manish.txt josh.txt"
+mv                   -  renames files or moves to a target directory.
+rm                   -  removes or deletes files.
+touch                -  changes file access and modification times. creates file if not found.
+wc                   -  displays the number of lines, words and bytes in a file.
